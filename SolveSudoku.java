@@ -41,7 +41,7 @@ static boolean printAllSolutions=false;
                 for (int j=0; j<9; j++){
                     a=-1*sc.nextInt();
                     if ((a!=0)&&(!legalRow(i,Math.abs(a)-1)||!legalCol(j,Math.abs(a)-1)||!legalBox(((i/3)*3+j/3),Math.abs(a)-1))){
-                        System.out.println("No solution. "+i + " "+j);
+                        System.out.println("No solution. ");
                         System.exit(0);
                     }
                     else{
