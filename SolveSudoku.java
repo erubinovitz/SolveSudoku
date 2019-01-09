@@ -45,7 +45,7 @@ static boolean printAllSolutions=false;
                         System.exit(0);
                     }
                     else{
-                      //  System.out.println("legal");
+                    
                         board[i][j]=a;
                     }
                 }
@@ -124,12 +124,7 @@ static boolean printAllSolutions=false;
         int nCandidates=0;
         nCandidates= constructCandidates(col,candidates,nCandidates,row); 
         
-        //System.out.println("ncandidates is " +nCandidates + " col is " + col + " row is " + row);
-       // print(candidates[row]);
-        if (row==4){
-           // processSolution();
-            
-        }
+    
         for (int i=0; i<nCandidates; i++){
             board[row][col]=candidates[row][i];
            // System.out.println("board["+row+"]["+col+"]="+candidates[row][i]);
@@ -151,8 +146,7 @@ static boolean printAllSolutions=false;
 
 
         for (int i=0; i<col; i++){
-         //   System.out.println(row);
-           // System.out.println(board[row][i]);
+ 
             if (board[row][i]!=0)
             inPerm[Math.abs(board[row][i])-1]=true; 
         }
@@ -162,13 +156,9 @@ static boolean printAllSolutions=false;
             if (!inPerm[i]&&legalRow(row,i)&&legalCol(col,i)&&legalBox(((row/3)*3+col/3),i)){
                 candidates[row][nCandidates]=i+1;
                 nCandidates++;
-                //System.out.println("new candidate");
+          
             }
-            else{
-              if (col==5&&row==4&&i==8){
-               //   System.out.println("cant use 9 " );
-              }
-            }
+           
         }
 
         return nCandidates;
